@@ -1,0 +1,11 @@
+s --> col,nat,pet ,col,nat,pet ,col,nat,pet.
+
+col --> [red].
+col --> [green].
+col --> [blue].
+nat --> [english].
+nat --> [japanese].
+nat --> [spanish].
+pet --> [jaguar].
+pet --> [snail].
+pet --> [zebra].
