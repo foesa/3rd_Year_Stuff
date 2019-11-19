@@ -1,10 +1,18 @@
-s --> s(_).
-s(N) --> u(N),[2],v(N).
+s --> person(C1, N1, P1), person(C2, N2, P2), person(C3, N3, P3),
+        {C1 \== C2, C1 \== C3, C2 \== C3,
+         N1 \== N2, N1 \== N3, N2 \== N3,
+         P1 \== P2, P1 \== P3, P2 \== P3}.
 
-u(0) --> [].
-u(N) --> [0], u(N1), { N is N1 + 1 }.
-u(N) --> [1], u(N).
+person(C, N, P) --> col(C), nat(N), pet(P).
 
-v(0) --> [].
-v(N) --> [1], v(N1), {R is N/2}, { R is N1 + 1 }.
-v(N) --> [0], v(N).
+col('red')   --> [red].
+col('blue')  --> [blue].
+col('green') --> [green].
+
+nat('english')  --> [english].
+nat('spanish')  --> [spanish].
+nat('japanese') --> [japanese].
+
+pet('jaguar') --> [jaguar].
+pet('snail')  --> [snail].
+pet('zebra')  --> [zebra].

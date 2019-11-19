@@ -1,11 +1,5 @@
-s --> col,nat,pet ,col,nat,pet ,col,nat,pet.
+mkList(0, []).
+mkList(N, [N|T]) :- N > 0, X is N-1, mkList(X, T).
 
-col --> [red].
-col --> [green].
-col --> [blue].
-nat --> [english].
-nat --> [japanese].
-nat --> [spanish].
-pet --> [jaguar].
-pet --> [snail].
-pet --> [zebra].
+s(0) --> [].
+s(N) --> {mkList(N, DescList), member(Item, DescList), Remainder is N-Item}, [Item], s(Remainder).
