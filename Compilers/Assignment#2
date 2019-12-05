@@ -1,0 +1,19 @@
+/* fb1-1 just like unix wc */
+%{
+char errString[] = "syntax error\n";
+%}
+
+%%
+
+\"[.]*\" {}
+\*\*[^\n]+|\{\{*[.]\}	{ }
+\{[.\n]*^[\}]$|^[\{]*\} {printf("%s",errString); exit(0);}
+
+%%
+
+int main()
+{
+  yylex();
+  return 0;
+}
+##need to fix multi line comments

@@ -19,17 +19,20 @@ class cache():
 
     def cacheCheck(self,Lister):
         if self.K == 1:
+            hitNum = 0
             for tag in Lister:
                 ctag = self.tagConvert(tag)
                 if ctag[1] in self.cachetags:
                     if ctag[0] == self.cachetags[ctag[1]]:
                         print(ctag,"hit")
+                        hitNum = hitNum +1
                     else:
                         self.cachetags[ctag[1]] = ctag[0]
                         print("miss")
                 else :
                     self.cachetags[ctag[1]] = ctag[0]
                     print("miss")
+            print(hitNum)
         else:
             hitNum = 0
             for tag in Lister:
