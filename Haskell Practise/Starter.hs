@@ -84,10 +84,8 @@ unzipper ((x,y):xs) = (x:xs',y:ys')
     (xs', ys') = unzipper xs
 
 zipper :: [a] -> [b] -> [(a,b)]
-zipper [] [] = error "list is empty"
-zipper (x:xs) (y:ys) = [(x,y)]
-  where
-    (xs':ys') = zipper xs ys
+zipper (x:xs) (y:ys) = (x,y):zipper xs ys
+zipper _ _ = []
 
 f2 :: a -> (a->a->a) -> [a] -> a
 f2 x fx [] = x
