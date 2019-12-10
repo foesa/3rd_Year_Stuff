@@ -78,7 +78,7 @@ indexer (x:xs) 0 = x
 indexer yer@(x:xs) n = if lengther yer > n then indexer xs (n-1) else error "List is too small"
 
 unzipper :: [(a,b)] -> ([a],[b])
-unzipper [] = error "empty list"
+unzipper [] = ([],[])
 unzipper ((x,y):xs) = (x:xs',y:ys')
   where
     (xs', ys') = unzipper xs

@@ -28,7 +28,9 @@ remove(X,[],[]).
 remove(X,[H|T],[H|V]):- X =\= H, remove(X,T,V).
 remove(X,[H|T],V):- X =:= H, remove(X,T,V).
 
-sublist(X,B,E,R) :- N is 1,sublist(X,B,E,R,N).
+sublist(X,B,E,R) :- N is 1,sublist(X,B,E,R,N). /* X is input list, B is where sublist starts inclusive,
+E is where sublist ends inclusive and R is return list. N is used to keep track of how many vals in the list.
+ */
 sublist(X,B,E,[],C) :- C > E.
 sublist([H|T],B,E,[H|V],C) :- C >= B,C =< E, N is C+1, sublist(T,B,E,V,N).
 sublist([H|T],B,E,V,C) :- N is C +1, sublist(T,B,E,V,N).
