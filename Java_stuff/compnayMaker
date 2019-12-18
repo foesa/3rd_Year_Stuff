@@ -1,0 +1,69 @@
+import java.util.Scanner;
+public class compan{
+    public static void main(String[] args){
+        Scanner inputScanner = new Scanner(System.in);
+        System.out.print("Enter the name of the 3 items and their prives seperated by a space: ");
+        String input = inputScanner.nextLine();
+        String[] tokens = input.split(" ");
+
+        int input = 0;
+        while(input != 6){
+            System.out.println("1: Sell an item to a customer \n 2: Display Names and stock levels of all items \n " +
+                    " 3: Add new Stock for and item \n 4: Display total profits \n 5: Engrave an item \n 6: exit system \n " +
+                    "Enter a number to enter that submenu: ");
+            if(inputScanner.hasNextInt()){
+                input = inputScanner.nextInt();
+                switch (input){
+                    case 1:
+                        System.out.println("Enter the product you wish to sell: ");
+                        String item = inputScanner.nextLine();
+                        if(item.equalsIgnoreCase(item1)){
+                            System.out.print("How many of this item do you want to sell: ");
+                            if(inputScanner.hasNextInt()){
+                                amount = inputScanner.nextInt();
+                                if( amount <= itemAmount1){
+                                    i
+                                }
+                            }
+                        }
+                        else if(item.equalsIgnoreCase(item2)){
+
+                        }
+                        else if(item.equlasIgnoreCase(item3)){
+
+                        }
+                        else{
+                            System.out.println("This store does not sell that item")
+                        }
+                        break;
+                    case 2:
+                        System.out.println("Stock amount:\n" +
+                                item1+ " "+itemAmount1+" \n" +
+                                item2+ " "+itemAmount2+ " \n"+
+                                item3+ " "+itemAmount3);
+                        break;
+
+                    case 3:
+                        System.out.println("Enter the product you wish to sell: ");
+                        String item = inputScanner.nextLine();
+                        if(item.equalsIgnoreCase(item1)){
+                            System.out.println("Enter the amount you wish to sell: ");
+                            int amount = inputScanner.nextInt();
+                            itemAmount1 = itemAmount1 + amount;
+                            System.out.println(itemAmount1+ " " + item1 + " in inventory");
+                        }
+                        else if(item.equalsIgnoreCase(item2)){
+
+                        }
+                        else if(item.equlasIgnoreCase(item3)){
+
+                        }
+                        else{
+                            System.out.println("This store does not sell that item")
+                        }
+                }
+            }
+
+        }
+    }
+}

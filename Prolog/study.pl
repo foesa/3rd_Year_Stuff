@@ -39,7 +39,3 @@ harmonic(K,H,C,[V|T],U):- C =:= 1, V is 1, N is C+1,H is V ,harmonic(K,H,N,T,U).
 harmonic(K,H,C,[V|T],U):- C =< K, V is (1/C + H), N is C+1, R is H + 1/C, harmonic(K,R,N,T,U).
 harmonic(K,H,C,[],U):- C > K, U is H.
 harmonic(K,U) :- harmonic(K,H,1,V,U).
-
-q(a).
-q(X) :- X=b,!
-q(C).
