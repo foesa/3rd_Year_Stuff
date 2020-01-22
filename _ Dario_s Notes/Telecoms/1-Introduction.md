@@ -1,0 +1,39 @@
+# Course Details
+- Duration - 12 weeks
+- Lectures
+    - 3 hrs a week
+	- Monday, Tuesday, Thursday @ 10-11
+- Assessment
+    - Coursework 20%
+    	- Networking
+		- Security/Cryptography
+    - Summer Exam 80%
+
+# Course Outline
+- Transport Layer
+    - Multiplexing and demultiplexing
+	- Connectionless Transport: UPD
+	- Connection-orientated Transport: TCP
+	- TCP Congestion Control
+- Application Layer
+    - Network Application Architectures
+	- WWW and HTTP
+	- Simple Mail Transfer Protocol (SMTP)
+	- Domain Name Server (DNS)
+	- P2P Applications
+	- Web Applications
+- Network Security
+    - Symmetric & Asymmetric-key cryptography
+	- Digital signatures, X.509 Certs & PKI
+	- Authentication Protocols
+	- HTTPS - SSL/TLS
+	- IPSex
+	- DNSSEC
+- Electronic Payment Systems
+    - Ecash
+	- Bitcoin
+	- Micropayments
+- Mobile Communications
+    - Medium Access Control
+	- 2G, 3G & Beyond
+	- 802.11 Wireless LANs

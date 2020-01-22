@@ -1,0 +1,5 @@
+﻿  ConsoleApplication4.cpp
+c:\users\isaac\source\repos\consoleapplication4\consoleapplication4\consoleapplication4.cpp(31): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\isaac\source\repos\consoleapplication4\consoleapplication4\consoleapplication4.cpp(38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\isaac\source\repos\consoleapplication4\consoleapplication4\consoleapplication4.cpp(76): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  ConsoleApplication4.vcxproj -> C:\Users\Isaac\source\repos\ConsoleApplication4\Debug\ConsoleApplication4.exe
