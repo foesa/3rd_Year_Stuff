@@ -1,0 +1,38 @@
+myMatrix  = [6,1,1;4,-2,5;2,8,7];
+disp(threebythree(myMatrix));
+
+function val = twobytwo(matrix)
+    val = (matrix(1,1)*matrix(2,2)) - (matrix (1,2)*matrix(2,1));
+end
+
+function val2 = threebythree(matrix)
+    first = matrix(1,1)*twobytwo([matrix(2,2),matrix(2,3);matrix(3,2),matrix(3,3)]);
+    second = matrix(1,2)* twobytwo([matrix(2,1),matrix(2,3);matrix(3,1),matrix(3,3)]);
+    third = matrix(1,3)*twobytwo([matrix(2,1),matrix(2,2);matrix(3,1),matrix(3,2)]);
+    val2 = (first-second)+third;
+end
+
+function val3 = fourbyfour(matrix)
+    tempMat = [0,0,0,0,0,0,0,0,0];
+    incr = 1;
+    curAns = 0;
+    for s = 1:4
+        for i = 1:4
+            for j = 1:4
+                if (i ~= 1 && j ~= s)
+                    tempMat(incr) = matrix(i,j);
+                    incr = incr +1;
+                end
+            end
+        end
+        sendMat = reshape(tempMat,[3,3]);
+        if s == 1
+            curAns = threebythree(sendMat);
+        elseif mod(s,2) == 0
+            curAns = curAns - threebythree(sendMat);
+        else
+            curAns = curAns + threebythree(sendMat);
+        end
+    end
+    val3 = curAns
+end
