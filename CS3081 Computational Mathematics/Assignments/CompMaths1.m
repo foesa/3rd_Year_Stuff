@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+myMatrix  = [-1,2,1;2,2,-4;0.2,1,0.5];
+disp(Inverse(myMatrix));
+
+>>>>>>> 2688fa34dd64fb14c75f20a27d10b4182e4b9296
 function val = twobytwo(matrix)
     val = (matrix(1,1)*matrix(2,2)) - (matrix (1,2)*matrix(2,1));
 end
@@ -34,3 +40,41 @@ function val3 = fourbyfour(matrix)
     end
     val3 = curAns
 end
+<<<<<<< HEAD
+=======
+
+function Ainv = Inverse (A)
+    [n, m]=size(A); 
+    if n ~= m 
+        Ainv ='The matrix must be square';
+        return
+    end
+    if n == 0 
+        Ainv ='Matrix cant be empty';
+        return
+    end
+    Ainv = eye(n);
+    for r = 1 : n
+        for c = r : n
+            if A(c,r) ~= 0
+                t = 1/A(r,r);
+                for i = 1 : n
+                    A(r,i) = t * A(r,i);
+                    Ainv(r,i) = t * Ainv(r,i); 
+                end
+                for i = 1 : n
+                    if i ~= r 
+                        t = -A(i,r);
+                        for j = 1 : n
+                            A(i,j) = A(i,j) + t * A(r,j);
+                            Ainv(i,j) = Ainv(i,j) + t * Ainv(r,j);
+                        end
+                    end
+                end
+            end
+            break
+        end
+    end
+end
+        
+>>>>>>> 2688fa34dd64fb14c75f20a27d10b4182e4b9296
