@@ -1,3 +1,42 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{listings}
+\title{CSU33081 Computational Mathematics \\ Assignment 1}
+\author{Efeosa Eguavoen \\ 17324649}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\lstset{breaklines = true}
+
+\begin{document}
+\maketitle
+\newpage
+\section{Exercise 2.31 }
+Part (a):
+
+    (i) 4 
+    (ii) 13
+    (iii) 26
+    (iv) 18
+
+Your Answer (i)-(iv): (ii)13
+
+Part (b):
+
+    (i) 0
+    (ii) 12
+    (iii)  7
+    (iv)  4
+
+Your Answer (i)-(iv):(i)0
+\newline
+\newline
+Matlab code: 
+\newline
+\begin{lstlisting}
 function val = twobytwo(matrix)
     val = (matrix(1,1)*matrix(2,2)) - (matrix (1,2)*matrix(2,1));
 end
@@ -34,3 +73,9 @@ function val3 = fourbyfour(matrix)
     end
     val3 = curAns
 end
+
+\end{lstlisting}
+
+\section{•}
+
+\end{document}
