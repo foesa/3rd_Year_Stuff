@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'database/SaveImageDemoSQLite.dart';
-void main() => runApp(MyApp());
+import 'database/SaveImageDemo.dart';
+void main() => runApp(HomeApp());
 
 class HomeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SaveImageDemoSQLite(),
+      home: SaveImageDemo(),
     );
   }
 }
