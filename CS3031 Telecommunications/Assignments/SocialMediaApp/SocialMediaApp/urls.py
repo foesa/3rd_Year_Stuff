@@ -1,7 +1,8 @@
 from django.contrib import admin
-from django.urls import path
-from SecureApp import views
+from django.urls import path,include
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",views.home)
+    path("accounts/",include("accounts.urls")),
+    path("secureApp/",include("SecureApp.urls")),
 ]
