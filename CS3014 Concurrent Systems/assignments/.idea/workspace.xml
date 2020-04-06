@@ -12,8 +12,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1d16576-10c4-42d5-8b42-2a4d7cdc3b09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment/conv-harness.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignments.dir/conv-harness.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignments.dir/conv-harness.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/assignments" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/assignments" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conv-harness.c" beforeDir="false" afterPath="$PROJECT_DIR$/conv-harness.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,7 +26,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
@@ -37,21 +39,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/conv-harness.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="530" column="16" lean-forward="true" selection-start-line="530" selection-start-column="16" selection-end-line="530" selection-end-column="16" />
+            <state relative-caret-position="90">
+              <caret line="428" column="3" selection-start-line="428" selection-start-column="3" selection-end-line="428" selection-end-column="3" />
               <folding>
                 <element signature="e#1200#1218#0" expanded="true" />
-                <element signature="e#1765#1905#1" />
-                <element signature="e#1908#2866#0" />
-                <element signature="e#2868#3972#0" />
-                <element signature="e#3974#4613#0" />
-                <element signature="e#4616#5000#0" />
-                <element signature="e#5003#5995#0" />
-                <element signature="e#5997#6365#0" />
-                <element signature="e#6367#6894#0" />
-                <element signature="e#6896#8621#0" />
-                <element signature="e#8623#9001#0" />
-                <element signature="e#9005#9839#0" />
               </folding>
             </state>
           </provider>
@@ -136,36 +127,38 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586183340887</updated>
-      <workItem from="1586183345104" duration="9438000" />
+      <workItem from="1586183345104" duration="13816000" />
+      <workItem from="1586203127134" duration="7770000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9438000" />
+    <option name="totallyTimeSpent" value="21586000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24958494" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25235197" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="CMake" weight="0.32937366" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Messages" weight="0.32937366" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32937366" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17818575" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.049676027" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20086393" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.015118791" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32937366" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32937366" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.32937366" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,26 +169,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/conv-harness.c</url>
-          <line>503</line>
-          <option name="timeStamp" value="7" />
+          <line>465</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/conv-harness.c</url>
-          <line>529</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/conv-harness.c</url>
-          <line>352</line>
-          <option name="timeStamp" value="14" />
+          <line>479</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main.c">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -203,23 +188,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/conv-harness.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="530" column="16" lean-forward="true" selection-start-line="530" selection-start-column="16" selection-end-line="530" selection-end-column="16" />
+        <state relative-caret-position="90">
+          <caret line="428" column="3" selection-start-line="428" selection-start-column="3" selection-end-line="428" selection-end-column="3" />
           <folding>
             <element signature="e#1200#1218#0" expanded="true" />
-            <element signature="e#1765#1905#1" />
-            <element signature="e#1908#2866#0" />
-            <element signature="e#2868#3972#0" />
-            <element signature="e#3974#4613#0" />
-            <element signature="e#4616#5000#0" />
-            <element signature="e#5003#5995#0" />
-            <element signature="e#5997#6365#0" />
-            <element signature="e#6367#6894#0" />
-            <element signature="e#6896#8621#0" />
-            <element signature="e#8623#9001#0" />
-            <element signature="e#9005#9839#0" />
           </folding>
         </state>
       </provider>

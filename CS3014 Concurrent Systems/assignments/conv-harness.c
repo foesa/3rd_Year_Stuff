@@ -39,6 +39,7 @@
 #include <math.h>
 #include <stdint.h>
 #include <omp.h>
+#include <x86intrin.h>
 
 /* the following two definitions of DEBUGGING control whether or not
    debugging information is written out. To put the program into
@@ -389,7 +390,6 @@ void multichannel_conv_sparse(float *** image, struct sparse_matrix *** kernels,
   // now compute multichannel, multikernel convolution
   for ( w = 0; w < width; w++ ) {
     for ( h = 0; h < height; h++ ) {
-      double sum = 0.0;
       for ( x = 0; x < kernel_order; x++) {
 	    for ( y = 0; y < kernel_order; y++ ) {
 	        struct sparse_matrix * kernel = kernels[x][y];
@@ -412,7 +412,6 @@ void multichannel_conv_sparse(float *** image, struct sparse_matrix *** kernels,
 void team_conv_sparse(float *** image, struct sparse_matrix *** kernels, float *** output, int width, int height,int nchannels, int nkernels, int kernel_order) {
   int h, w, x, y, c, m, index;
   float value;
-  __m128d sum1, sum2, a, b1, b2, ab1, ab2;
   // initialize the output matrix to zero
   for ( m = 0; m < nkernels; m++ ) {
       for ( h = 0; h < height; h++ ) {
@@ -422,25 +421,32 @@ void team_conv_sparse(float *** image, struct sparse_matrix *** kernels, float *
       }
   }
 
-  #pragma omp parallel for if (nkernels > 500) private(w, h, m, c, x, y, sum1, sum2, a, b1, b2, ab1, ab2) shared(output, image, kernels) collapse(3)
-    for ( w = 0; w < width; w++ ) {
-      for ( h = 0; h < height; h++ ) {
-        double sum = 0.0;
-        for ( x = 0; x < kernel_order; x++) {
-          for ( y = 0; y < kernel_order; y++ ) {
-            struct sparse_matrix * kernel = kernels[x][y];
-            for ( m = 0; m < nkernels; m++ ) {
-              for ( index = kernel->kernel_starts[m]; index < kernel->kernel_starts[m+1]; index++ ) {
-                int this_c = kernel->channel_numbers[index];
-                assert( (this_c >= 0) && (this_c < nchannels) );
-                value = kernel->values[index];
-                output[m][h][w] += image[w+x][h+y][this_c] * value;
+    DEBUGGING(fprintf(stderr, "w=%d, h=%d, c=%d\n", w, h, c));
+
+  int imageSize  = height*width;
+  int kSize = kernel_order*kernel_order;
+
+ // #pragma omp parallel for
+  for(int ch = 0;ch<imageSize;ch++){
+      w = ch/width;
+      h = ch%width;
+
+      for(int xy = 0; xy<kSize; xy++){
+          x = xy/kernel_order;
+          y = xy% kernel_order;
+
+          float *cached = image[w+x][h+y];
+          struct sparse_matrix * kernel = kernels[x][y];
+          for (m = 0;m<nkernels;m++){
+              int start = kernel->kernel_starts[m];
+              int end = kernel->kernel_starts[m+1];
+              for (index = start;index < end;index++){
+                  int this_c = kernel->channel_numbers[index];
+                  output[m][h][w] += cached[this_c] * kernel->values[index];
               }
-            }    // m
-          } // y
-        } // x
-      } // h
-    }// w
+          }
+      }
+  }
 
 }
 
