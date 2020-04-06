@@ -1,0 +1,1 @@
+/home/linuxbrew/.linuxbrew/bin/cc -g   CMakeFiles/assignments.dir/conv-harness.c.o  -o assignments 

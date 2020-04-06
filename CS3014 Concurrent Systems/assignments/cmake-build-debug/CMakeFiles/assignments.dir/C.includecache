@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/foesa/3rd_Year_Stuff/CS3014 Concurrent Systems/assignments/conv-harness.c
+stdio.h
+-
+stdlib.h
+-
+sys/time.h
+-
+assert.h
+-
+omp.h
+-
+math.h
+-
+stdint.h
+-
+omp.h
+-
+

@@ -38,6 +38,7 @@
 #include <omp.h>
 #include <math.h>
 #include <stdint.h>
+#include <omp.h>
 
 /* the following two definitions of DEBUGGING control whether or not
    debugging information is written out. To put the program into
@@ -379,6 +380,8 @@ void multichannel_conv_sparse(float *** image, struct sparse_matrix *** kernels,
 	output[m][h][w] = 0.0;
       }
     }
+
+
   }
 
   DEBUGGING(fprintf(stderr, "w=%d, h=%d, c=%d\n", w, h, c));
@@ -388,17 +391,17 @@ void multichannel_conv_sparse(float *** image, struct sparse_matrix *** kernels,
     for ( h = 0; h < height; h++ ) {
       double sum = 0.0;
       for ( x = 0; x < kernel_order; x++) {
-	for ( y = 0; y < kernel_order; y++ ) {
-	  struct sparse_matrix * kernel = kernels[x][y];
-	  for ( m = 0; m < nkernels; m++ ) {
-	    for ( index = kernel->kernel_starts[m]; index < kernel->kernel_starts[m+1]; index++ ) {
-	      int this_c = kernel->channel_numbers[index];
-	      assert( (this_c >= 0) && (this_c < nchannels) );
-	      value = kernel->values[index];
-	      output[m][h][w] += image[w+x][h+y][this_c] * value;
-	    }
-	  } // m
-	} // y
+	    for ( y = 0; y < kernel_order; y++ ) {
+	        struct sparse_matrix * kernel = kernels[x][y];
+	        for ( m = 0; m < nkernels; m++ ) {
+	            for ( index = kernel->kernel_starts[m]; index < kernel->kernel_starts[m+1]; index++ ) {
+	                int this_c = kernel->channel_numbers[index];
+	                assert( (this_c >= 0) && (this_c < nchannels) );
+	                value = kernel->values[index];
+	                output[m][h][w] += image[w+x][h+y][this_c] * value;
+	            }
+	        } // m
+	    } // y
       } // x
     } // h
   }// w
@@ -406,11 +409,39 @@ void multichannel_conv_sparse(float *** image, struct sparse_matrix *** kernels,
 
 
 /* the fast version of sparse convolution written by the team */
-void team_conv_sparse(float *** image, struct sparse_matrix *** kernels,
-		       float *** output, int width, int height,
-		       int nchannels, int nkernels, int kernel_order) {
-  multichannel_conv_sparse(image, kernels, output, width, height,
-			   nchannels, nkernels, kernel_order);
+void team_conv_sparse(float *** image, struct sparse_matrix *** kernels, float *** output, int width, int height,int nchannels, int nkernels, int kernel_order) {
+    int h, w, x, y, c, m, index;
+    float value;
+
+    // initialize the output matrix to zero
+    for ( m = 0; m < nkernels; m++ ) {
+        for ( h = 0; h < height; h++ ) {
+            for ( w = 0; w < width; w++ ) {
+                output[m][h][w] = 0.0;
+            }
+        }
+    }
+
+    #pragma omp parallel for it(nkernels>500) private(w,h,x,y,c,m) shared(output,image, kernels) collapse(3)
+        for ( w = 0; w < width; w++ ) {
+            for ( h = 0; h < height; h++ ) {
+                double sum = 0.0;
+                for ( x = 0; x < kernel_order; x++) {
+                    for ( y = 0; y < kernel_order; y++ ) {
+                        struct sparse_matrix * kernel = kernels[x][y];
+                        for ( m = 0; m < nkernels; m++ ) {
+                            for ( index = kernel->kernel_starts[m]; index < kernel->kernel_starts[m+1]; index++ ) {
+                                int this_c = kernel->channel_numbers[index];
+                                assert( (this_c >= 0) && (this_c < nchannels) );
+                                value = kernel->values[index];
+                                output[m][h][w] += image[w+x][h+y][this_c] * value;
+                            }
+                        }    // m
+                    } // y
+                } // x
+            } // h
+        }// w
+
 }
 
 int main(int argc, char ** argv) {
@@ -485,12 +516,32 @@ int main(int argc, char ** argv) {
     multichannel_conv_dense(image, kernels, output, width,
                     height, nchannels, nkernels, kernel_order);
   }
+
   /* record finishing time */
   gettimeofday(&stop_time, NULL);
+
 
   mul_time = (stop_time.tv_sec - start_time.tv_sec) * 1000000L +
     (stop_time.tv_usec - start_time.tv_usec);
   printf("Team conv time: %lld microseconds\n", mul_time);
+
+  gettimeofday(&start_time, NULL);
+
+  if ( nz_ratio > 1 ) { // we're working on a sparse matrix
+        /* perform David's sparse multichannel convolution */
+        multichannel_conv_sparse(image, sparse_kernels, output, width,
+                         height, nchannels, nkernels, kernel_order);
+  }
+  else { // we're working on a dense matrix
+        multichannel_conv_dense(image, kernels, output, width,
+                                height, nchannels, nkernels, kernel_order);
+  }
+    /* record finishing time */
+  gettimeofday(&stop_time, NULL);
+
+  mul_time = (stop_time.tv_sec - start_time.tv_sec) * 1000000L +
+               (stop_time.tv_usec - start_time.tv_usec);
+  printf("David conv time: %lld microseconds\n", mul_time);
 
   DEBUGGING(write_out(output, nkernels, width, height));
 
