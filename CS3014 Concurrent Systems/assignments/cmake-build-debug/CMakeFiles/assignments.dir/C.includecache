@@ -23,4 +23,6 @@ stdint.h
 -
 omp.h
 -
+x86intrin.h
+-
 

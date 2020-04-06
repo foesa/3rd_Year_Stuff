@@ -12,10 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1d16576-10c4-42d5-8b42-2a4d7cdc3b09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignments.dir/conv-harness.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignments.dir/conv-harness.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/assignments" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/assignments" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conv-harness.c" beforeDir="false" afterPath="$PROJECT_DIR$/conv-harness.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignments.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignments.dir/C.includecache" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -128,23 +125,30 @@
       <option name="presentableId" value="Default" />
       <updated>1586183340887</updated>
       <workItem from="1586183345104" duration="13816000" />
-      <workItem from="1586203127134" duration="7770000" />
+      <workItem from="1586203127134" duration="7844000" />
     </task>
+    <task id="LOCAL-00001" summary="some speedup has happened! need to analyse the code why and see if I can make any other improvements">
+      <created>1586215176790</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586215176790</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21586000" />
+    <option name="totallyTimeSpent" value="21660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25235197" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20086393" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.20086393" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.015118791" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -163,6 +167,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="some speedup has happened! need to analyse the code why and see if I can make any other improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="some speedup has happened! need to analyse the code why and see if I can make any other improvements" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
