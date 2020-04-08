@@ -1,7 +1,9 @@
 from django import forms
 from django.contrib.auth import authenticate
-from django.contrib.auth import get_user_model
-
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import  get_user_model
+from .models import userMake
 User = get_user_model()
 
 class UserLoginForm(forms.Form):
@@ -22,28 +24,27 @@ class UserLoginForm(forms.Form):
                 raise forms.ValidationError('This user is not active')
         return super(UserLoginForm, self).clean(*args, **kwargs)
 
-
-class UserRegForm(forms.ModelForm):
-    email = forms.EmailField(label='Email address')
-    email2 = forms.EmailField(label='Confirm Email')
-    password = forms.CharField(widget=forms.PasswordInput)
+class RegistrationForm(UserCreationForm):
+    email = forms.EmailField(required=True)
 
     class Meta:
         model = User
-        fields = [
+        fields = (
             'username',
+            'first_name',
+            'last_name',
             'email',
-            'email2',
-            'password'
-        ]
+            'password1',
+            'password2'
+        )
 
-    def clean(self, *args, **kwargs):
-        email = self.cleaned_data.get('email')
-        email2 = self.cleaned_data.get('email2')
-        if email != email2:
-            raise forms.ValidationError("Emails must match")
-        email_qs = User.objects.filter(email=email)
-        if email_qs.exists():
-            raise forms.ValidationError(
-                "This email has already been registered")
-        return super(UserRegForm, self).clean(*args, **kwargs)
+    def save(self, commit=True):
+        user = super(RegistrationForm, self).save(commit=False)
+        user.first_name = self.cleaned_data['first_name']
+        user.last_name = self.cleaned_data['last_name']
+        user.email = self.cleaned_data['email']
+
+        if commit:
+            user.save()
+        return user
+

@@ -2,11 +2,12 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 class Post(models.Model):
-    creator = models.ForeignKey(User,on_delete=models.DO_NOTHING)
-    text = models.CharField(max_length=246)
-    timeCreated = models.DateTimeField(auto_now_add=True)
+    post = models.CharField(max_length=500,default="Empty")
+    user = models.ForeignKey(User,on_delete=models.CASCADE,default=None)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
-class UserFriends(models.Model):
+class userFriends(models.Model):
     users = models.ManyToManyField(User)
     current_user = models.ForeignKey(User, related_name='owner', null=True, on_delete=models.CASCADE)
 
