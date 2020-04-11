@@ -12,13 +12,22 @@
     <p>First name: {{ user.first_name }}</p>
     <p>Last name: {{ user.last_name }}</p>
     <p>Email: {{ user.email }}</p>
-    <p>Description: {{ user.userprofile.description }}</p>
-    <p>Phone: {{ user.userprofile.phone }}</p>
-    <p>City: {{ user.userprofile.city }}</p>
-    <p>Website: {{ user.userprofile.website }}</p>
+    <h1> User Posts:</h1>
+    {% for post in posts %}
+            <h1>{{ post.post }}</h1>
+            <p>Posted by {{ post.user.get_full_name }} on {{ post.timeCreated }}</p>
+    {% endfor %}
     {% if user.userprofile.image %}
     <img src="{{ user.userprofile.image.url }}" width="240">
     {% endif %}
+    {% if not friend %}
+        <a href="{% url 'change_friendsr' operation='add' pk=user.pk %}">
+            <button type="button" class="btn btn-success">Add Friend</button>
+        </a>
+    {% endif %}
+    <a href="{% url 'home' %}">
+            <button type="button" class="btn btn-success">Return Home</button>
+    </a>
 </div>
 
 {% endblock %}

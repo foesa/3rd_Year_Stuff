@@ -12,7 +12,7 @@
         <h2>{{ text }}</h2>
         {% for post in posts %}
             <h1>{{ post.post }}</h1>
-            <p>Posted by {{ post.user.get_full_name }} on {{ post.timeCreated }}</p>
+            <p>Posted by {{ post.user.username }}</p>
         {% endfor %}
     </div>
     <div class="col-md-4">
@@ -35,6 +35,7 @@
             <a href="{% url 'change_friends' operation='remove' pk=friend.pk %}">
             <button type="button" class="btn btn-default">Remove Friend</button>
             </a>
+
         {% endfor %}
     </div>
 </div>
