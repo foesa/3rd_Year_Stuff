@@ -12,7 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1d16576-10c4-42d5-8b42-2a4d7cdc3b09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignments.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignments.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conv-harness.c" beforeDir="false" afterPath="$PROJECT_DIR$/conv-harness.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,11 +36,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/conv-harness.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="428" column="3" selection-start-line="428" selection-start-column="3" selection-end-line="428" selection-end-column="3" />
+            <state relative-caret-position="432">
+              <caret line="433" column="9" lean-forward="true" selection-start-line="433" selection-start-column="9" selection-end-line="433" selection-end-column="9" />
               <folding>
                 <element signature="e#1200#1218#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../../linuxbrew/.linuxbrew/Cellar/gcc/5.5.0_4/lib/gcc/x86_64-unknown-linux-gnu/5.5.0/include/xmmintrin.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="295">
+              <caret line="972" selection-start-line="972" selection-end-line="972" />
             </state>
           </provider>
         </entry>
@@ -63,8 +72,8 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="x" value="993" />
     <option name="y" value="25" />
     <option name="width" value="927" />
     <option name="height" value="1055" />
@@ -75,7 +84,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -87,6 +95,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -108,7 +117,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="assignments" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="100 100 3 512 512 50" PASS_PARENT_ENVS_2="true" PROJECT_NAME="assignments" TARGET_NAME="assignments" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="assignments" RUN_TARGET_NAME="assignments">
+    <configuration name="assignments" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="256 256 3 128 128 200" PASS_PARENT_ENVS_2="true" PROJECT_NAME="assignments" TARGET_NAME="assignments" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="assignments" RUN_TARGET_NAME="assignments">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -126,6 +135,7 @@
       <updated>1586183340887</updated>
       <workItem from="1586183345104" duration="13816000" />
       <workItem from="1586203127134" duration="7844000" />
+      <workItem from="1586712698535" duration="8452000" />
     </task>
     <task id="LOCAL-00001" summary="some speedup has happened! need to analyse the code why and see if I can make any other improvements">
       <created>1586215176790</created>
@@ -138,12 +148,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21660000" />
+    <option name="totallyTimeSpent" value="30112000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="993" y="25" width="927" height="1055" extended-state="4" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25235197" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -177,13 +187,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/conv-harness.c</url>
-          <line>465</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/conv-harness.c</url>
-          <line>479</line>
-          <option name="timeStamp" value="20" />
+          <line>413</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -199,10 +204,17 @@
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../linuxbrew/.linuxbrew/Cellar/gcc/5.5.0_4/lib/gcc/x86_64-unknown-linux-gnu/5.5.0/include/xmmintrin.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="972" selection-start-line="972" selection-end-line="972" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/conv-harness.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="428" column="3" selection-start-line="428" selection-start-column="3" selection-end-line="428" selection-end-column="3" />
+        <state relative-caret-position="432">
+          <caret line="433" column="9" lean-forward="true" selection-start-line="433" selection-start-column="9" selection-end-line="433" selection-end-column="9" />
           <folding>
             <element signature="e#1200#1218#0" expanded="true" />
           </folding>

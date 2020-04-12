@@ -411,22 +411,35 @@ void multichannel_conv_sparse(float *** image, struct sparse_matrix *** kernels,
 /* the fast version of sparse convolution written by the team */
 void team_conv_sparse(float *** image, struct sparse_matrix *** kernels, float *** output, int width, int height,int nchannels, int nkernels, int kernel_order) {
   int h, w, x, y, c, m, index;
-  float value;
   // initialize the output matrix to zero
-  for ( m = 0; m < nkernels; m++ ) {
-      for ( h = 0; h < height; h++ ) {
-          for ( w = 0; w < width; w++ ) {
-              output[m][h][w] = 0.0;
-          }
-      }
-  }
+    __m128 zeroes = _mm_set1_ps(0.0);
+    if(width % 4 == 0){             // must be a multiple of 4!
+#pragma omp parallel for if(width > 128)
+        for ( m = 0; m < nkernels; m++ ) {
+            for ( h = 0; h < height; h++ ) {
+                for (w = 0; w < width; w+=4) {
+                    _mm_store_ps(&output[m][h][w],zeroes);
+                }
+            }
+        }
+    }
+    else{
+#pragma omp parallel for if(width > 128)
+        for ( m = 0; m < nkernels; m++ ) {
+            for ( h = 0; h < height; h++ ) {
+                for (w = 0; w < width; w++) {
+                    output[m][h][w] = 0.0;
+                }
+            }
+        }
+    }
 
     DEBUGGING(fprintf(stderr, "w=%d, h=%d, c=%d\n", w, h, c));
 
   int imageSize  = height*width;
   int kSize = kernel_order*kernel_order;
 
- // #pragma omp parallel for
+  #pragma omp parallel for
   for(int ch = 0;ch<imageSize;ch++){
       w = ch/width;
       h = ch%width;
@@ -447,7 +460,6 @@ void team_conv_sparse(float *** image, struct sparse_matrix *** kernels, float *
           }
       }
   }
-
 }
 
 int main(int argc, char ** argv) {
