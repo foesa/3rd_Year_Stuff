@@ -414,7 +414,7 @@ void team_conv_sparse(float *** image, struct sparse_matrix *** kernels, float *
   // initialize the output matrix to zero
     __m128 zeroes = _mm_set1_ps(0.0);
     if(width % 4 == 0){             // must be a multiple of 4!
-#pragma omp parallel for if(width > 128)
+        #pragma omp parallel for if(width > 128)
         for ( m = 0; m < nkernels; m++ ) {
             for ( h = 0; h < height; h++ ) {
                 for (w = 0; w < width; w+=4) {
@@ -424,7 +424,7 @@ void team_conv_sparse(float *** image, struct sparse_matrix *** kernels, float *
         }
     }
     else{
-#pragma omp parallel for if(width > 128)
+        #pragma omp parallel for if(width > 128)
         for ( m = 0; m < nkernels; m++ ) {
             for ( h = 0; h < height; h++ ) {
                 for (w = 0; w < width; w++) {

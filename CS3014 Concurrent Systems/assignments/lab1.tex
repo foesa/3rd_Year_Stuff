@@ -1,0 +1,105 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[14pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{CSU33014 Lab 1 - Sparse parallel multichannel multikernel convolution
+}
+\author{Efeosa Eguavoen 17324649}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+\section{Algorithmic Improvements}
+The first improvements made to the initial code provided was to parallelize creating the output matrix as this was taking a lot of time to do initially. I achieved this by placing a pragma for loop outside it and it resulted in a sizeable speedup for the execution time overall.
+\newline
+Next I went to look at how the code provided was computing convolution. I saw it was using a number of nested for loops within one another and acessing the same parts of memory numerous times. So I decided to rewrite the code for that part of the exercise to reduce the overall all algorithmic complexity so as the input grows the overall compute time would be lower. To prevent recurrent memory access, I've also saved some of the key parts to variables as memory access takes more time to complete than accessing variables. 
+
+\section{SSE -x86 Intrinsics}
+The next optimization I went with was to use the m128d datatype(2 32bit precision floats) to build the solution matrix instead of using ordinary floats or doubles. Using this meant I was able to increase the efficency of builiding the output matrix by 2. The only caveat is the code could only be ran when the width of the image was a factor of 2  but this didn't prove to be to much of an issue in the end as it was worth the speed up.
+The final optimization I used was using OpenMp to parallelize builing the solution set. It allowed us to run this part of the assignment concurrently and increased speed up according to how many threads were running the program. ''Parallel For'' divided the iterations of a for loop between the threads while using ''collapse()'' merged several for loops into an iteration space and divided according to the schedule clause. The order of iteration in all the associated loops determines the order of the iterations in the collapsed iteration space.
+
+\section{Problems Faced}
+I ran into several problems while implementing the code. First of all, I was stuck using my laptop to compile and execute the code as I couldn't access Stoker from my location which made it rather difficult to run large inputs as it took quite some time to get a result and to make sure the result was correct. Also as I was on my own as my original team are very spread out making collaboration difficult, I had to spend a lot of time debugging and reading up on all aspects of the code.
+OpenMP threads were also sharing loop variables, which meant parts of the image were being skipped etc, and so the output we were getting was totally wrong. Once we added in the private() clause, with the right variables inside of it, the algorithm was working properly again. Soon we noticed that running multiple threads on small inpusociated with them so aren't free, but with overhead like context switches, and locking mechanisms. This is only worth the cost when you actually have more dedicated CPU cores to run code on. After finding this out we’ve put in “if statements” to insure that threading will only be applied when large inputs are being used. This also made it a lot easier to run on my laptop. 
+ 
+\section{What I learned} 
+Optimization of code and algorithms is hugely important in many different areas of computer science. However, the effort it requires to change a sequential program into a fully correct concurrent one, is often not worth it, particularly if execution time is not critical to the functionality of the program. 
+It’s not always worth the effort of threading or parallelizing, since there can be diminishing returns from doing so.  
+Not to thread something where the amount of work is small, since there is a significant cost in executing OpenMP parallel constructs. We used if statements in our OpenMP calls to avoid this.  
+
+\section{Timings}
+I would run larger inputs than provided below but my laptop keeps overheating and shutting off trying to run large inputs. I generated one input for a very large input but I don't know how correct it is or if it's representative of actual figures so I neglected to include it.
+\newline
+Input​ 16 16 1 32 32 20.
+\newline
+Average Time​179 Microseconds 
+\newline
+\newline
+Input​128 128 3 512 512 200
+\newline
+Average Time​ 10.4 seconds
+\newline
+\newline
+Input​ 128 128 7 512 512 200
+\newline
+Average Time​
+\newline
+\newline
+Input 256 256 3 128 128 200
+\newline
+Average
+ 
+\end{document}
