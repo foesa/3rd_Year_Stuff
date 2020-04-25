@@ -1,5 +1,5 @@
 function N = InfinityNorm(A)
-  [m.n] = size(A)
+  [m,n] = size(A)
   max = 0;
   cur = 0;
   for i in 1:m
