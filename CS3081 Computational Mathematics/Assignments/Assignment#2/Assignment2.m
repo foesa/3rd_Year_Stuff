@@ -1,15 +1,13 @@
-myMatrix = [4,-1,3,2;-8,0,-3,-3.5;2,-3.5,10,3.75;-8,-4,1,-0.5];
+myMatrix = [25 5 4; 10 8 16;8 12 22];
 disp(LUdecompgauss(myMatrix));
 matrix = [0,0,0,1,0,0;1,0,1,0,1,1;0,1,0,0,1,0;1,1,0,0,1,0;1,1,1,0,0,1;1,0,0,0,1,0];
 [V,D] = eig(matrix);
-disp(binornd(100,1));
-disp(D);
+
 
 pop = [400,557,825,981,1135,1266,1370];
 year = [1900,1950,1970,1980,1990,2000,2010];
 [a1,a0]= LinearRegression(year,log(pop));
-disp(exp(a0));
-disp(a1);
+
 function [L,U] = LUdecompgauss(A)
 [m, n] = size(A);
 L = zeros(m);
