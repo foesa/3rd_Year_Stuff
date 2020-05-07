@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from collections import Counter
-
+# id:0.548:0.5-0.314:2-0.614:2-0
 def graphMaker():
     dataFile = open("statsData", "r")
     user0Vals = []
@@ -55,7 +55,6 @@ def graphMaker():
     print((p_Zn))
     print(u0_stats,'\n',u1_stats,'\n',u2_stats,'\n',u3_stats)
     return([u0_stats['mean'],u1_stats['mean'],u2_stats['mean'],u3_stats['mean']])
-
 
 def stochastic_sim(means):
     order = np.random.choice(['user0','user1','user2','user3'],10000,
@@ -142,5 +141,4 @@ def gradient_descentRandom():
     plt.show()
     print("The local minimum occurs at", startX)
 
-means = graphMaker()
-stochastic_sim(means)
+

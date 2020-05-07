@@ -1,7 +1,7 @@
 from decimal import Decimal
 
-excercise = [[[0.891,8],[0.009,8],[0.1,0]], [[0.18,0],[0.72,0],[0.1,0]], [[0,0],[0,0],[1,0]]]
-relax = [[[0.693,10],[0.297,10],[0.01,0]], [[0,5],[0.99,5],[0.01,0]], [[0,0],[0,0],[1,0]]]
+excercise = [[[0,0],[1,2],[0,0]], [[0,0],[0,0],[1,2]], [[0,0],[0,0],[1,4]]]
+relax = [[[0,0],[0,0],[1,1]], [[0,0],[0,0],[1,2]], [[0,0],[0,0],[1,4]]]
 
 iterations = int(input("Please enter number of iterations: "))
 disc_val = float(input("Please enter discounted value (0 < y < 1): "))
