@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/csu33014_annual_partB.dir/csu33014-annual-partB-code.c.o CMakeFiles/csu33014_annual_partB.dir/csu33014-annual-partB-main.c.o CMakeFiles/csu33014_annual_partB.dir/csu33014-annual-partB-person.c.o  -o csu33014_annual_partB 

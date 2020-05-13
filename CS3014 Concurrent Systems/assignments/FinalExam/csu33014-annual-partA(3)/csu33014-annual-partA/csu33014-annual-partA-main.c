@@ -67,6 +67,7 @@ double diff_square(float * a, float * b, int size) {
   for ( int i = 0; i < size; i++ ) {
     double diff = a[i] - b[i];
     //fprintf(stderr, "a[%d]: %f, b[%d]: %f\n", i, a[i], i, b[i]);
+
     sum = sum + diff * diff;
   }
   return sum;

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/foesa/Documents/3rd_Year_Stuff/CS3014 Concurrent Systems/assignments/FinalExam/csu33014-annual-partA(3)/csu33014-annual-partA/csu33014-annual-partA-code.c
+immintrin.h
+-
+stdio.h
+-
+csu33014-annual-partA-code.h
+/home/foesa/Documents/3rd_Year_Stuff/CS3014 Concurrent Systems/assignments/FinalExam/csu33014-annual-partA(3)/csu33014-annual-partA/csu33014-annual-partA-code.h
+
+/home/foesa/Documents/3rd_Year_Stuff/CS3014 Concurrent Systems/assignments/FinalExam/csu33014-annual-partA(3)/csu33014-annual-partA/csu33014-annual-partA-code.h
+

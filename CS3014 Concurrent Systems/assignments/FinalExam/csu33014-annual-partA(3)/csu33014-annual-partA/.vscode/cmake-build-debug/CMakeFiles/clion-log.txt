@@ -1,0 +1,16 @@
+/home/foesa/programs/clion-2020.1.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/home/foesa/Documents/3rd_Year_Stuff/CS3014 Concurrent Systems/assignments/FinalExam/csu33014-annual-partA(3)/csu33014-annual-partA/.vscode"
+-- Configuring done
+CMake Error at CMakeLists.txt:6 (add_executable):
+  Cannot find source file:
+
+    conv-harness.c
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at CMakeLists.txt:6 (add_executable):
+  No SOURCES given to target: assignments
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/foesa/Documents/3rd_Year_Stuff/CS3014 Concurrent Systems/assignments/FinalExam/csu33014-annual-partB(1)/csu33014-annual-partB/csu33014-annual-partB-code.c
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+assert.h
+-
+csu33014-annual-partB-person.h
+/home/foesa/Documents/3rd_Year_Stuff/CS3014 Concurrent Systems/assignments/FinalExam/csu33014-annual-partB(1)/csu33014-annual-partB/csu33014-annual-partB-person.h
+
+/home/foesa/Documents/3rd_Year_Stuff/CS3014 Concurrent Systems/assignments/FinalExam/csu33014-annual-partB(1)/csu33014-annual-partB/csu33014-annual-partB-person.h
+
