@@ -71,7 +71,7 @@
 \makeatother
 \title{STU33009: Statistical Methods for Computer Science - Final Assignment
 }
-\author{Efeosa Eguavoen 17324649}
+\author{Efeosa Eguavoen 17324649 }
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
 \begin{document}
@@ -169,7 +169,7 @@ testList  =  random(3 items from subject list, by new weighted probabilities fro
 	\indent if tot == 2: return 1
 	\newline
 return 0 
-\newline recalculate probabilites
+\newline recalculate probabilites based on testList, loop again
 \newline
 Other function\newline
 pList = [] (List of subjects that didn't come up last year)\newline
@@ -177,10 +177,10 @@ olist = []
 for item in prevList:
 \newline \indent if item not in prevList: add to pList \newline
 \indent else: add to olist \newline
-userList = random \newline
+userList = random(n \(\le\) 3 from olist) \newline
 userList += random(n-3 from plist) \newline
 The rest is the same as  normal stochastic simulation.\newline
-recalculate probabilites based on test results\newline
+recalculate probabilites based on test results. loop and feed back in\newline
 The functions in the code to calculate these results can be found at probalter() which calculates new probabilities,stoch\_alter() and stoch\_alter2() that are the 2 different methods I mentioned above.\newline
 \textbf{Results}
 \begin{figure}[h]
@@ -238,6 +238,14 @@ X = input Feature(Q1 results) , Y = Output(Qx result)
 The assumption that the mean is a linear function of the features isn't appropriate here in my opinion as while it's possible to fit a linear line through the data, it would be an underfit of the data. The data presents more of a sigmoid function than linear. To better fit the data, we could define a new feature that is a function of the curve the data suggest i.e \(\frac{1}{1+e^{-x}}\) with some tweaks could fit the data a lot better than a linear function. We do need to be careful we don't overfit the data although by selecting a feature that goes through all the data points. From here we can use linear regression as normal to fit the model which I think would better, more accurate predictions. 
 \newline
 I don't think the type of randomness associated with linear regression is appropriate here as we have bounds on our inputs as inputs can only be between 0-100 and so can the outputs.While the input in this range is random, it's not wholly random like in normal linear regression.
+\subsection{(e)}
+\subsection{(f)}
+We can use Gradient Descent to find \(S_i\) and \(D_j\) by using the formula for gradient descent with multiple variables as we're dealing with  \(S_i\) and \(D_j\). Using the formula \[\theta_j - \alpha\frac{\vartheta}{\vartheta\theta_j}J(\theta)\] We can get a value of j. Using the following algorithm we can get the minnimum values for both  \(S_i\) and \(D_j\). 
+\newline Algorithm (Starting with some initial values for each parameter):
+\newline for (j in range(0,n):
+\newline \indent tempj = \(\theta_j - \alpha\frac{\vartheta}{\vartheta\theta_j}J(\theta)\)
+\newline \indent \(\theta_j := tempj \)
+\newline We repeat this till the difference between iterations is so small it's negligible, which indicates to us we've reached the minnimum values. 
 \newpage
 \section{Code}
 I split the code into multiple functions as it's easier to reference from the report.

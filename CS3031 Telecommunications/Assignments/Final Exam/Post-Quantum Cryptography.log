@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.23)  3 MAY 2020 01:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.23)  10 MAY 2020 17:48
 entering extended mode
 **"./Post-Quantum Cryptography.tex"
 ("Post-Quantum Cryptography.tex"
@@ -408,6 +408,15 @@ LaTeX Warning: Citation `gruska1999quantum' on page 1 undefined on input line 3
 
 
 ]
+
+LaTeX Warning: Citation `10.1007/978-3-662-53008-5_8' on page 2 undefined on in
+put line 40.
+
+
+LaTeX Warning: Citation `beauregard2002circuit' on page 2 undefined on input li
+ne 40.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 38--45
 []\OT1/ptm/m/n/10 The most in-trin-sic com-mu-ni-ca-tion pro-to-cols
  []
@@ -438,11 +447,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--45
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 38--45
-\OT1/ptm/m/n/10 this method ob-so-lete and im-po-tent, leav-ing our
- []
-
-
 Underfull \hbox (badness 1874) in paragraph at lines 38--45
 \OT1/ptm/m/n/10 a quan-tum com-puter with enough power. While
  []
@@ -463,8 +467,20 @@ Overfull \hbox (52.27615pt too wide) in paragraph at lines 49--61
  []
 
 
-Underfull \hbox (badness 1383) in paragraph at lines 63--67
-[]\OT1/ptm/m/n/10 The ta-ble above pro-vides in-sights into cur-rent
+LaTeX Warning: Citation `chen2016report' on page 2 undefined on input line 63.
+
+
+LaTeX Warning: Citation `grassl2016applying' on page 2 undefined on input line 
+63.
+
+
+Underfull \hbox (badness 1803) in paragraph at lines 63--67
+\OT1/ptm/m/n/10 chang-ing any of the cur-rent pro-to-cols in place.
+ []
+
+
+Underfull \hbox (badness 2865) in paragraph at lines 63--67
+\OT1/ptm/m/n/10 Sim-i-larly for hash func-tions such as SHA-256,
  []
 
 
@@ -472,141 +488,188 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--67
 
  []
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 78--83
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--77
 
  []
 
 
-Underfull \hbox (badness 2644) in paragraph at lines 78--83
+Underfull \hbox (badness 10000) in paragraph at lines 69--77
+
+ []
+
+
+Underfull \vbox (badness 1902) has occurred while \output is active []
+
+ [2]
+Underfull \hbox (badness 2277) in paragraph at lines 80--85
+\OT1/ptm/m/n/10 prop-erly.McEliece sug-gested us-ing the fam-ily of
+ []
+
+
+Underfull \hbox (badness 6526) in paragraph at lines 80--85
+\OT1/ptm/m/n/10 bi-nary Goppa codes as the in-dis-tin-guisha-bil-ity
+ []
+
+
+Underfull \hbox (badness 1728) in paragraph at lines 80--85
+\OT1/ptm/m/n/10 codes the ass-sump-tion doesn't hold, mak-ing the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--85
+
+ []
+
+
+Underfull \hbox (badness 4254) in paragraph at lines 80--85
+\OT1/ptm/m/n/10 There are no real world sys-tems us-ing code-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--90
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--104
+
+ []
+
+
+Underfull \hbox (badness 2644) in paragraph at lines 99--104
 \OT1/ptm/m/n/10 Based off the above in-for-ma-tion, a num-ber of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--94
+LaTeX Warning: Citation `hoffstein1998ntru' on page 3 undefined on input line 1
+10.
+
+
+LaTeX Warning: Citation `bi2014lower' on page 3 undefined on input line 112.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--115
 
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 86--94
+Underfull \hbox (badness 1688) in paragraph at lines 107--115
 \OT1/ptm/m/n/10 One real world ex-am-ple of post-quantum lat-tice
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--94
-\OT1/ptm/m/n/10 based en-cryp-tion is NTRU. In this sys-tem
+Underfull \hbox (badness 7151) in paragraph at lines 107--115
+\OT1/ptm/m/n/10 based en-cryp-tion is NTRU$[]$. In this sys-tem
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--94
+Underfull \hbox (badness 10000) in paragraph at lines 107--115
 \OT1/ptm/m/n/10 the pub-lic key is a $\OML/cmm/m/it/10 p$\OT1/ptm/m/n/10 -coeff
 icient poly-no-mial
  []
 
 
-Underfull \hbox (badness 2269) in paragraph at lines 86--94
+Underfull \hbox (badness 2269) in paragraph at lines 107--115
 \OML/cmm/m/it/10 h \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 h[] \OT1/cmr/m/n/10 + \OM
 L/cmm/m/it/10 h[]x \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 :::: \OT1/cmr/m/n/10 + \O
 ML/cmm/m/it/10 h[]x[]$ \OT1/ptm/m/n/10 with each
  []
 
+[3]
 
-LaTeX Warning: Citation `supersing' on page 3 undefined on input line 97.
+LaTeX Warning: Citation `supersing' on page 4 undefined on input line 117.
 
 
-Underfull \hbox (badness 1888) in paragraph at lines 97--105
+Underfull \hbox (badness 1888) in paragraph at lines 117--125
 \OT1/ptm/m/n/10 systems[[]] were cre-ated to re-place the el-lip-ti-cal
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--105
+Underfull \hbox (badness 10000) in paragraph at lines 117--125
 
  []
 
 
-Underfull \hbox (badness 1552) in paragraph at lines 97--105
+Underfull \hbox (badness 1552) in paragraph at lines 117--125
 \OT1/ptm/m/n/10 The se-cu-rity of such sys-tems are heav-ily based
  []
 
-[3]
 LaTeX Info: Symbol \textrightarrow not provided by
             font family ptm in TS1 encoding.
-            Default family used instead on input line 105.
+            Default family used instead on input line 125.
 LaTeX Info: Symbol \textrightarrow not provided by
             font family ptm in TS1 encoding.
-            Default family used instead on input line 106.
+            Default family used instead on input line 126.
 LaTeX Info: Symbol \textrightarrow not provided by
             font family ptm in TS1 encoding.
-            Default family used instead on input line 107.
+            Default family used instead on input line 127.
 LaTeX Info: Symbol \textrightarrow not provided by
             font family ptm in TS1 encoding.
-            Default family used instead on input line 108.
+            Default family used instead on input line 128.
+
+LaTeX Warning: Citation `supersing' on page 4 undefined on input line 130.
 
 
-LaTeX Warning: Citation `supersing' on page 4 undefined on input line 110.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 110--121
+Underfull \hbox (badness 10000) in paragraph at lines 130--141
 
  []
 
 
-Underfull \hbox (badness 2334) in paragraph at lines 110--121
+Underfull \hbox (badness 2334) in paragraph at lines 130--141
 \OT1/ptm/m/n/10 by re-searchers work-ing on us-ing su-per sin-gu-lar
  []
 
 
-Underfull \hbox (badness 5217) in paragraph at lines 110--121
+Underfull \hbox (badness 5217) in paragraph at lines 130--141
 \OT1/ptm/m/n/10 iso-ge-nies for dig-i-tal sig-na-tures in-stead of key
  []
 
 
-Underfull \hbox (badness 2057) in paragraph at lines 110--121
+Underfull \hbox (badness 2057) in paragraph at lines 130--141
 \OT1/ptm/m/n/10 func-tion on the data and out-put an ap-pro-pri-ate
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--121
+Underfull \hbox (badness 10000) in paragraph at lines 130--141
 
  []
 
 
-Underfull \hbox (badness 3758) in paragraph at lines 110--121
+Underfull \hbox (badness 3758) in paragraph at lines 130--141
 \OT1/ptm/m/n/10 when com-bined with pre-existing re-search. The
  []
 
 
-Underfull \hbox (badness 3128) in paragraph at lines 110--121
+Underfull \hbox (badness 3128) in paragraph at lines 130--141
 \OT1/ptm/m/n/10 so-phis-ti-ca-tion of the math-e-mat-ics used in such
  []
 
 
-Underfull \hbox (badness 1442) in paragraph at lines 110--121
+Underfull \hbox (badness 1442) in paragraph at lines 130--141
 \OT1/ptm/m/n/10 with very small key sizes by re-searchers shows
  []
 
+[4]
 
-LaTeX Warning: Citation `alagic2019status' on page 4 undefined on input line 12
+LaTeX Warning: Citation `alagic2019status' on page 5 undefined on input line 14
 8.
 
 
-LaTeX Warning: Citation `197151' on page 4 undefined on input line 130.
+LaTeX Warning: Citation `197151' on page 5 undefined on input line 150.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
 []|\OT1/ptm/m/n/8 McEliece's code based
  []
 
 
-Overfull \hbox (52.27615pt too wide) in paragraph at lines 141--153
+Overfull \hbox (52.27615pt too wide) in paragraph at lines 161--173
  [] 
  []
 
-[4]
 No file "Post-Quantum Cryptography".bbl.
-[5
-
-] [6] ("Post-Quantum Cryptography.aux")
+[5] [6] ("Post-Quantum Cryptography.aux")
 
 LaTeX Warning: There were undefined references.
 
@@ -614,7 +677,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  4253 strings out of 481545
  72272 string characters out of 2913488
- 483058 words of memory out of 3000000
+ 485058 words of memory out of 3000000
  19467 multiletter control sequences out of 15000+200000
  570131 words of font info for 96 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -634,7 +697,7 @@ rw/times/utmb8a.pfb><C:/Users/legua/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/urw/times/utmbi8a.pfb><C:/Users/legua/AppData/Local/Programs/MiKTeX 2.9/font
 s/type1/urw/times/utmr8a.pfb><C:/Users/legua/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Post-Quantum Cryptography.pdf" (6 pages, 144076 bytes).
+Output written on "Post-Quantum Cryptography.pdf" (6 pages, 146112 bytes).
 PDF statistics:
  71 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
