@@ -238,12 +238,18 @@ void partA_vectorized6(float * restrict a, float * restrict b,
 		       float * restrict c) {
   // replace the following code with vectorized code
   a[0] = 0.0;
-  for ( int i = 1; i < 1023; i++ ) {
-    float sum = 0.0;
-    for ( int j = 0; j < 3; j++ ) {
-      sum = sum +  b[i+j-1] * c[j];
-    }
-    a[i] = sum;
+  float sum[4];
+  __m128 bv ;
+  __m128 cv ;
+  for(int i = 1;i<1023;i++){
+    bv = _mm_loadu_ps(&b[i-1]);
+    cv = _mm_loadu_ps(&c[0]);
+    __m128 xv = _mm_setzero_ps();
+    xv = _mm_add_ps(xv, _mm_mul_ps(bv,cv));
+    _mm_store_ps(sum,xv);
+    a[i] = sum[0]+sum[1]+sum[2];
+    printf("\n values: %d %d %d %d",a[i],sum[0],sum[1],sum[2]);
+
   }
   a[1023] = 0.0;
 }

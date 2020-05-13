@@ -232,20 +232,33 @@ void partA_routine6(float * restrict a, float * restrict b,
     a[i] = sum;
   }
   a[1023] = 0.0;
+
 }
 
 void partA_vectorized6(float * restrict a, float * restrict b,
 		       float * restrict c) {
   // replace the following code with vectorized code
-  a[0] = 0.0;
-  for ( int i = 1; i < 1023; i++ ) {
-    float sum = 0.0;
-    for ( int j = 0; j < 3; j++ ) {
-      sum = sum +  b[i+j-1] * c[j];
+    a[0] = 0.0;
+    float sum[4];
+    __m128 bv ;
+    __m128 cv ;
+    __m128 cshuf;
+    for(int i = 1;i<1023;i = i+2){
+        bv = _mm_loadu_ps(&b[i-1]);
+        cv = _mm_loadu_ps(&c[0]);
+        cshuf = _mm_shuffle_ps(cv,cv,_MM_SHUFFLE(2,1,0,3));
+        __m128 xv = _mm_setzero_ps();
+        xv = _mm_add_ps(xv, _mm_mul_ps(bv,cv));
+        _mm_store_ps(sum,xv);
+        a[i] = sum[0]+sum[1]+sum[2];
+        xv = _mm_setzero_ps();
+        xv = _mm_add_ps(xv, _mm_mul_ps(bv,cshuf));
+        _mm_store_ps(sum,xv);
+        a[i+1] = sum[1]+sum[2]+sum[3];
+        //printf("\n values: %d %d %d %d",a[i],sum[0],sum[1],sum[2]);
     }
-    a[i] = sum;
-  }
-  a[1023] = 0.0;
+    a[1023] = 0.0;
+
 }
 
 
